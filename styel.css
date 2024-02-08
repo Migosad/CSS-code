@@ -1,0 +1,1174 @@
+/* selectors */
+/*
+-*=> target all elements
+-element=> element name
+-class=> .class.name
+
+-ID=> #id name
+nesting=>
+-parent .child=element inside element
+-element other-element
+-.class .other-class
+
+gruping=>
+More than one element together
+-element, element, element...
+
+element with two classes=>
+-class.class
+
+element with class=>
+-element.class-name
+
+Direct child=>
+-parent > .child
+
+next selector=>
+-element + elment
+
+sipling selector=>
+-element ~ elment
+
+select with Attribute=>
+-[attribute]
+-element[attribute]
+-[attribute="value"]
+-element[attribute="value"]
+-element[attribute~="value"]=contains a word
+-element[attribute*="value"]=contains a string
+-element[attribute^="value"]=start with string
+
+select with position=>
+-:first-child=frist element
+-:last-child=last element
+-:first-of-type=first element of type
+-:last-of-type=last element of type
+-:only-child=only child of element
+-:only-of-type=only type of element
+-:not(selector)=All except(selector)
+-:nth-child(n)=element according to number
+-:nth-last-child(n)=element according to number of last
+-:nth-of-type(n)=element according to number of type
+-:nth-last-of-type(n)=element according to number of type-last
+
+Specificity Hierarchy
+-Inline styles - Example: <h1 style="color: pink;">
+-IDs - Example: #navbar
+-Classes, pseudo-classes, attribute selectors - Example: .test, :hover, [href]
+-Elements and pseudo-elements - Example: h1, ::before
+*/
+
+/*Dimensions Width & Height*/
+/* 
+width
+height
+are used to set the height and width of an element.
+
+max-width=> Sets the maximum width of an element
+min-width=> Sets the minimum width of an element
+
+max-height=> Sets the maximum height of an element
+min-height=> Sets the minimum height of an element
+*/
+
+/* Pseudo classes */
+/*
+Pseudo classes:-is used to define a special state of an element.
+EX-
+Style an element when a user mouses over it
+Style visited and unvisited links differently
+Style an element when it gets focus
+
+Syntax:-
+selector:pseudo-class {
+  property: value;
+}
+
+pseudo-classs:-
+:link
+:visited
+:hover
+a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective.
+
+:active
+a:active MUST come after a:hover in the CSS definition in order to be effective.
+
+:first-child 
+ specified element that is the first child of another element.
+
+:lang
+allows you to define special rules for different languages.
+
+checked
+empty
+focus
+*/
+
+/* Pseudo-Elements */
+/* 
+Pseudo-Elements:-is used to style specified parts of an element.
+
+EX-
+  Style the first letter, or line, of an element
+  Insert content before, or after, the content of an element
+
+Syntax-
+selector::pseudo-element {
+  property: value;
+}
+
+Pseudo-Elements:-
+::first-line- 
+is used to add a special style to the first line of a text.
+
+::first-letter-
+is used to add a special style to the first letter of a text.
+
+::before-
+is used to insert some content before the content of an element.
+
+::after-
+is used to insert some content after the content of an element.
+
+::marker-
+is used to selects the markers of list items.
+
+::selection-
+matches the portion of an element that is selected by a user.
+
+*/
+
+/* CSS Combinators */
+/* 
+descendant selector (space):-
+ all elements that are descendants of a specified element.
+
+child selector (>):-
+selects all elements that are the children of a specified element.
+
+adjacent sibling selector (+):-
+select an element that is directly after another specific element.
+
+general sibling selector (~):-
+selects all elements that are next siblings of a specified element.
+*/
+
+/* position & z-index */
+/* 
+default=>static==Pinned
+relative==It moves based on it
+absolute==Moves based on parents
+fixed==fixed on page
+sticky==sticky on page 
+z-index==Arrange the layers and  it won't work without position
+*/
+
+/*  Math Functions */
+/* 
+calc()
+Allows you to perform calculations to determine CSS property values
+
+max()
+Uses the largest value, from a comma-separated list of values, as the property value
+
+min()
+Uses the smallest value, from a comma-separated list of values, as the property value
+*/
+
+/* !important */
+/* 
+-is used to add more importance to a property/value than normal.
+-It is good to know about the !important rule. 
+-You might see it in some CSS source code.
+-do not use it unless you absolutely have to.
+*/
+
+/* css uints */
+/* 
+px= pexle
+em= time(X)
+rem= root time(-X-root=html)
+percentage=(%)
+vw= view port width&hight(withe space)
+*/
+
+/* colors */
+/*
+RGBA:-
+-rgba(red, green, blue, alpha)
+
+HSLA:-
+-hsla(hue, saturation, lightness, alpha)
+
+Color Keywords:-
+-transparent
+//is used to make a color transparent.
+-currentcolor
+//is like a variable that holds the current value of the color property of an element.
+-inherit 
+//specifies that a property should inherit its value from its parent element.
+
+*/
+
+/* Gradients */
+/*
+-let you display smooth transitions between two or more specified colors.
+-you must define at least two color stops.
+-you can Repeats a radial,linear and conic gradients
+-CSS defines three types of gradients:-
+*Linear Gradients (goes down/up/left/right/diagonally):-
+-You can also set a starting point and a direction along with the gradient effect.
+-Syntax
+//background-image: linear-gradient(direction, color-stop1, color-stop2, ...);
+
+*Radial Gradients (defined by their center):-
+A radial gradient is defined by its center.
+-Syntax
+//background-image: radial-gradient(shape size at position, start-color, ..., last-color);
+
+*Conic Gradients (rotated around a center point)
+-is a gradient with color transitions rotated around a center point.
+-Syntax
+//background-image: conic-gradient([from angle] [at position,] color [degree], color [degree], ...);
+*/
+
+/* Shadow Effects */
+/*
+Text Shadow=>
+-The CSS text-shadow property applies shadow to text.
+
+-syntax
+//text-shadow: (horizontal)px (vertical)px (blur-effect)px (color);
+
+-to add Multiple Shadows, you can add a comma
+
+box-shadow=>
+-is used to apply one or more shadows to an element.
+
+-syntax
+//text-shadow: (horizontal)px (vertical)px (blur-effect)px (spread)px (color) inset;
+
+-to add Multiple Shadows, you can add a comma
+
+*/
+
+/* 2D Transforms */
+/*
+allow you to move, rotate, scale, and skew elements.
+
+translate([X-axis]px [Y-axis]px)
+-moves an element from its current position
+
+rotate(deg)
+-rotates an element clockwise or counter-clockwise according to a given degree.
+
+scaleX(width)
+-increases or decreases the width of an element.
+
+scaleY(height)
+-increases or decreases the height of an element.
+
+scale(width, height)
+-increases or decreases the size of an element
+
+skewX(deg)
+-skews an element along the X-axis by the given angle.
+
+skewY(deg)
+-skews an element along the Y-axis by the given angle.
+
+skew(deg, deg)
+-skews an element along the X and Y-axis by the given angles.
+
+matrix()
+-combines all the 2D transform methods into one.
+-matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY())
+*/
+
+/* 3D Transforms */
+/*
+you can use the following 3D transformation methods:-
+rotateX(deg)
+-rotates an element around its X-axis at a given degree:
+
+rotateY(deg)
+-rotates an element around its Y-axis at a given degree:
+
+rotateZ(deg)
+-rotates an element around its Z-axis at a given degree:
+
+*/
+
+/* Transitions */
+/*
+-allows you to change property values smoothly, over a given duration.
+-To create a transition effect, you must specify two things:
+//the CSS property you want to add an effect to
+//the duration of the effect
+
+transition:property duration;
+
+transition-delay:Ns;
+ specifies a delay (in seconds) for the transition effect.
+
+transition-timing-function:...
+-specifies the speed curve of the transition effect.
+//ease= effect with a slow start, then fast, then end slowly (this is default)
+//linear= effect with the same speed from start to end
+//ease-in= effect with a slow start
+//ease-out= effect with a slow end
+//ease-in-out= effect with a slow start and end
+//cubic-bezier(n,n,n,n)= lets you define your own values in a cubic-bezier function
+
+Transition + Transformation=>
+-property duration, transform duration;
+*/
+
+/* Animations */
+/*
+-animation lets an element gradually change from one style to another.
+-You can change as many CSS properties you want, as many times as you want.
+-To use CSS animation, you must first specify some keyframes for the animation.
+-To get an animation to work, you must bind the animation to an element.
+
+@keyframes animation-name {
+    from {
+        property: value;
+    }
+    to {
+        property: value;
+    }
+
+    or
+
+    0% {
+        property: value;
+    }
+    50% {
+        property: value;
+    }
+    100% {
+        property: value;
+    }etc....
+}
+-Provided that the (animation-name: animation-duration:Ns) are on the elment
+
+animation-delay: Ns
+-specifies a delay for the start of an animation.
+-Negative values are also allowed
+
+animation-iteration-count:N or (infinite)
+-specifies the number of times an animation should run.
+
+animation-direction: 
+-specifies whether an animation should be played forwards, backwards or in alternate cycles
+
+normal= played as normal (forwards). This is default
+reverse= played in reverse direction (backwards)
+alternate= played forwards first, then backwards
+alternate-reverse= played backwards first, then forwards
+
+animation-timing-function: 
+-property specifies the speed curve of the animation.
+
+ease= with a slow start, then fast, then end slowly (this is default)
+linear= with the same speed from start to end
+ease-in= with a slow start
+ease-out= with a slow end
+ease-in-out= with a slow start and end
+cubic-bezier(n,n,n,n) - Lets you define your own values in a cubic-bezier function
+
+animation-fill-mode: 
+-specifies a style for the target element when the animation is not playing
+-(before it starts, after it ends, or both)
+
+none= 
+Default value. Animation will not apply any styles to the element before or after it is executing
+forwards=
+The element will retain the style values that is set by the last keyframe 
+backwards=
+The element will get the style values that is set by the first keyframe , and retain this during the animation-delay period
+both=
+The animation will follow the rules for both forwards and backwards, extending the animation properties in both directions
+
+shorthand property=
+animation: (name duration timing-function delay iteration-count direction)
+*/
+
+/* images or video */
+/*
+object-fit:-
+-fill
+This is default. The image is resized to fill the given dimension. If necessary, the image will be stretched or squished to fit
+-contain
+The image keeps its aspect ratio, but is resized to fit within the given dimension
+-cover
+The image keeps its aspect ratio and fills the given dimension. The image will be clipped to fit
+-scale-down
+the image is scaled down to the smallest version of none or contain
+-none
+the image is not resized
+
+object-position:-
+-Specifies how an <img> or <video> should be positioned with x/y coordinates inside its "own content box"
+
+mask-image:
+-property specifies a mask layer image.
+*/
+
+/* Multi-column Layout */
+/*
+-allows easy definition of multiple columns of text - just like in newspapers
+
+values=>
+-column-count:N
+specifies the number of columns an element should be divided into.
+
+-column-gap:
+specifies the gap between the columns.
+
+column-rule-style:
+specifies the style of the rule between columns:
+
+column-rule-width:
+specifies the width of the rule between columns
+
+column-rule-color:
+specifies the color of the rule between columns
+
+column-rule:
+is a shorthand property for setting all the column-rule-* properties above.
+
+column-span:
+specifies how many columns an element should span across.
+
+column-width:
+specifies a suggested, optimal width for the columns.
+*/
+
+/* Variables */
+/*
+var()
+-is used to insert the value of a CSS variable.
+
+Syntax=>
+-var(--name, value)
+Required=>The variable name (must start with two dashes(--))
+Optional=>The fallback value (used if the variable is not found)
+
+-variable with global scope=>
+declare it inside the :root selector
+
+-variable with local scope=>
+declare it inside the selector that is going to use it.
+
+Advantages of using var() are=>
+-makes the code easier to read (more understandable)
+-makes it much easier to change the color values
+*/
+
+/* mouse cursor */
+/* 
+"cursor: auto"
+"cursor: crosshair"
+"cursor: default"
+"cursor: e-resize"
+"cursor: help"
+"cursor: move"
+"cursor: ne-resize"
+"cursor: nw-resize"
+"cursor: pointer"
+"cursor: progress"
+"cursor: s-resize"
+"cursor: se-resize"
+"cursor: sw-resize"
+"cursor: text"
+"cursor: w-resize"
+"cursor: wait"
+*/
+
+/* box-sizing */
+/*
+allows us to include the padding and border in an element's total width and height.
+
+-content-box
+Default
+
+-border-box
+The width and height properties (and min/max properties) includes content, padding and border
+*/
+
+/* Media Queries */
+/*
+-Using media queries are a popular technique ford elivering a tailored style sheet
+ to desktops, laptops, tablets, and mobile phones (such as iPhone and Android phones).
+
+Media Types=>
+-all= Used for all media type devices
+-print= Used for print preview mode
+-screen= Used for computer screens, tablets, smart-phones etc.
+
+Common Media Features=>
+-orientation= Orientation of the viewport. Landscape or portrait
+-max-height= Maximum height of the viewport
+-min-height= Minimum height of the viewport
+-height= Height of the viewport (including scrollbar)
+-max-width= Maximum width of the viewport
+-min-width= Minimum width of the viewport
+-width= Width of the viewport (including scrollbar)
+
+Syntax=>
+@media not|only mediatype and (media feature) and (media feature) {
+  CSS-Code;
+}
+Meaning= not, only, and :
+
+not= This keyword inverts the meaning of an entire media query.
+
+only=
+This keyword prevents older browsers that do not support media queries
+ from applying the specified styles. It has no effect on modern browsers.
+
+and= This keyword combines a media type and one or more media features.
+*/
+
+/* @font-face */
+/*
+@font-face
+Browser Support=>
+-TrueType Fonts (TTF)
+-OpenType Fonts (OTF)
+-The Web Open Font Format (WOFF)
+-The Web Open Font Format (WOFF 2.0)
+*/
+
+/* Flexbox */
+/*
+-makes it easier to design flexible responsive
+ layout structure without using float or positioning.
+
+ -The flex container becomes flexible by setting the display property to flex
+
+flex-direction:
+-defines in which direction the container wants to stack the flex items.
+-values=>
+column= stacks the flex items vertically (from top to bottom)
+column-reverse= stacks the flex items vertically (but from bottom to top)
+row= stacks the flex items horizontally (from left to right)
+row-reverse= stacks the flex items horizontally (but from right to left)
+
+flex-wrap:
+-specifies that the flex items will wrap if necessary
+-values=>
+wrap= specifies that the flex items will wrap if necessary
+nowrap= specifies that the flex items will not wrap (this is default)
+wrap-reverse= specifies that the flexible items will wrap if necessary, in reverse order
+
+flex-flow:
+-is a shorthand property for setting both the flex-direction and flex-wrap.
+
+justify-content:
+-is used to align the flex items
+-values=>
+center= aligns the flex items at the center of the container
+flex-start=aligns the flex items at the beginning of the container (this is default)
+flex-end= aligns the flex items at the end of the container
+space-around= displays the flex items with space before, between, and after the lines
+space-between=e displays the flex items with space between the lines
+
+align-items:
+-is used to align the flex items.
+-values=>
+center= aligns the flex items in the middle of the container
+flex-start=aligns the flex items at the top of the container
+flex-end= aligns the flex items at the bottom of the container
+stretch= stretches the flex items to fill the container (this is default)
+baseline= aligns the flex items such as their baselines aligns
+
+align-content:
+is used to align the flex lines.
+-values=>
+space-between= displays the flex lines with equal space between them
+space-around= displays the flex lines with space before, between, and after them
+stretch= stretches the flex lines to take up the remaining space (this is default)
+center= displays the flex lines in the middle of the container
+flex-start= displays the flex lines at the start of the container
+flex-end= displays the flex lines at the end of the container 
+*/
+/* Flex Items */
+/*
+Child Elements (Items)
+-direct child elements of a flex container automatically becomes flexible (flex) items.
+
+order:N
+-specifies the order of the flex items.
+
+flex-grow:N
+-specifies how much a flex item will grow relative to the rest of the flex items.
+
+flex-shrink:N
+specifies how much a flex item will shrink relative to the rest of the flex items.
+
+flex-basis:
+specifies the initial length of a flex item.
+
+flex:
+is a shorthand property for the flex-grow, flex-shrink, and flex-basis
+
+align-self:
+-specifies the alignment for the selected item inside the flexible container
+*/
+
+/* RWD */
+/*
+What is RWD?
+-Responsive Web Design
+//makes your web page look good on all devices uses only HTML and CSS.
+
+What is The Viewport?
+//The viewport is the user's visible area of a web page.
+//You should include the following <meta> viewport element in all your web pages
+ This gives the browser instructions on how to control the page's dimensions and scaling.
+-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+width=device-width=>
+-part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).
+initial-scale=1.0=>
+part sets the initial zoom level when the page is first loaded by the browser.
+*/
+
+/* Grid */
+/*
+(pxel,percentage,Automatic,fraction,)
+grid-template-columns: number of columns
+[px,%,auto,Nfr=Fraction,repeat(N, width),mix]
+grid-template-rows: number of rows
+[px,%,auto,Nfr=Fraction,repeat(N, width),mix]
+
+grid-column: start / end;
+The grid-column property defines on which column(s) to place an item.
+
+grid-row: start-N / end-N;
+The grid-row property defines on which row to place an item.
+
+grid-area: 
+shorthand property for the =>
+grid-row-start, grid-column-start,grid-row-end, grid-column-end properties.
+*/
+
+/*background*/
+.A1 {
+    /*name of color*/
+    background-color: red;
+    /*red,green,blue /Alpha channel*/
+    background-color: rgb(0 255 0 / 50%);
+    /*hex code of coler*/
+    background-color: #0000ff;
+    background-image: url(../mon.jpg);
+    /*repeat image*/
+    background-repeat: repeat;
+    /*no repeat image*/
+    background-repeat: no-repeat;
+    /*repeat Horizontal*/
+    background-repeat: repeat-x;
+    /*repeat Vertical*/
+    background-repeat: repeat-y;
+    /*no move background*/
+    background-attachment: scroll;
+    /*move background*/
+    background-attachment: fixed;
+    /*
+    position of background:
+    /left,right,center,top,
+    /pexl->50px
+    /percent->50%
+    */
+    background-position: left center;
+    /*Normal size of the background*/
+    background-size: auto;
+    /*stretching in the background*/
+    background-size: cover;
+    /*fully extended in the background*/
+    background-size: contain;
+    /*
+    size->pexl,percent
+    */
+    background-size: 50% 50%;
+    background-size: 50px 50px;
+
+    /* Multiple Backgrounds */
+    /* 
+    background-image: url(img_flwr.gif), url(paper.gif);
+    background-position: right bottom, left top;
+    background-repeat: no-repeat, repeat;
+
+    shorthand property
+    (image position repeat), (image position repeat)
+     background: url(img_flwr.gif) right bottom no-repeat, url(paper.gif) left top repeat;
+    */
+
+    /* background-origin */
+    /*
+specifies where the background image is positioned
+
+The property takes three different values:
+1/border-box=>
+the background image starts from the upper left corner of the border
+
+2/padding-box=>
+(default) the background image starts from the upper left corner of the padding edge
+
+3/content-box=>
+the background image starts from the upper left corner of the content
+    */
+
+    /* background-clip */
+    /* 
+specifies the painting area of the background.
+
+The property takes three different values:
+border-box=>(default) the background is painted to the outside edge of the border
+padding-box=>the background is painted to the outside edge of the padding
+content-box=>the background is painted within the content box
+*/
+}
+
+/*padding*/
+.A2 {
+    /*
+top,right,bottom,left
+(50PX,50PX,50PX,50PX)
+*/
+    padding: 50px;
+    /*
+top,right,bottom,left
+(10PX,20PX,10PX,20PX)
+*/
+    padding: 10px 20px;
+    /*
+top,right,bottom,left
+(10PX,20PX,15PX,20PX)
+*/
+    padding: 10px 20PX 15px;
+    /*
+top,right,bottom,left
+(0,0,20PX,)
+*/
+    padding: 0 0 20px;
+    padding-bottom: 50px;
+}
+
+/*margin*/
+.A3 {
+    /* accepts negative value */
+    /*
+top,right,bottom,left
+(50PX,50PX,50PX,50PX)
+*/
+    margin: 50px;
+    /*
+top,right,bottom,left
+(10PX,20PX,10PX,20PX)
+*/
+    margin: 10px 20px;
+    /*
+top,right,bottom,left
+(10PX,20PX,15PX,20PX)
+*/
+    margin: 10px 20PX 15px;
+    /*
+top,right,bottom,left
+(0,0,20PX,)
+*/
+    margin: 0 0 20px;
+    margin-bottom: 50px;
+    /*margin: accepts negative values*/
+    padding: 10px;
+    width: 60;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*border*/
+.A4 {
+    /*
+top,right,bottom,left
+(10PX,10PX,10PX,10PX)
+*/
+    border-width: 10px;
+    /*
+    border-color
+    top,right,bottom,left
+    (red,red,red,red)
+    */
+    border-color: red;
+    /*
+    border-style
+top,right,bottom,left
+(solid,solid,solid,solid)
+*/
+    border-style: solid;
+    /*
+    short cut code
+size, type, color
+*/
+    border: 10px solid red;
+
+    /* Rounded Border */
+    /* 
+    border-radius
+(top,right,bottom,left)
+
+border-top-left-radius=>
+Defines the shape of the border of the top-left corner
+
+border-top-right-radius=>
+Defines the shape of the border of the top-right corner
+
+border-bottom-right-radius=>
+Defines the shape of the border of the bottom-right corner
+
+border-bottom-left-radius=>
+Defines the shape of the border of the bottom-left corner
+
+border-radius=>
+A shorthand property for setting all the four border-*-*-*-radius properties
+    */
+    border-radius: 5px 5px 5px 5px;
+
+    /* border images */
+    /*
+border-image=>
+shorthand property for setting all the border-image-* properties
+
+border-image-source=>
+Specifies the path to the image to be used as a border
+
+border-image-slice=>
+Specifies how to slice the border image
+
+border-image-width=>
+Specifies the widths of the border image
+
+border-image-outset=>
+Specifies the amount by which the border image area extends beyond the border box
+*/
+}
+
+/*outline*/
+.A5 {
+    width: 500px;
+    padding: 20px;
+    margin: 50px;
+    border: 50px solid powderblue;
+    outline: 50px salmon solid;
+
+}
+
+/*display*/
+/*
+
+  Block
+  - Take Full Width If No Width
+  - Add Line Break
+  - Respect Padding, Margin, Width, Height
+
+  Inline
+  - Do Not Repsepct Width, Height
+  - Respect Padding And Margin [ Just Left + right ]
+  - Do Not Add Line Break
+  - Allow Elements Before And After It in The Same Line
+
+  Inline-Block
+  - Allow Elements Before And After It in The Same Line
+  - Respect Padding, Margin, Width, Height
+
+  flex
+  -Displays an element as a block-level flex container
+*/
+/*display block*/
+.A6 {
+    background-color: #ddd;
+    width: 350px;
+    height: 100px;
+    margin: 10px;
+    padding: 10px;
+}
+
+/*display inline*/
+span {
+    background-color: red;
+    margin: 10px;
+    padding: 10px;
+    border: 10px solid black;
+}
+
+/*display inline-block*/
+.A7 {
+    display: inline-block;
+    background-color: red;
+    margin: 10px;
+    padding: 10px;
+    border: 10px solid black;
+    width: 200px;
+    height: 100px;
+}
+
+/*display none*/
+.A8 {
+    background-color: #ddd;
+    margin: 10px;
+    padding: 10px;
+    border: 10px solid black;
+    width: 200px;
+    height: 100px;
+    display: none;
+
+}
+
+/*visibility-hidden*/
+.A9 {
+    background-color: #ddd;
+    visibility: hidden;
+}
+
+/*visibility-visible*/
+.A10 {
+    background-color: #ddd;
+    visibility: visible;
+    /*default value= visible*/
+}
+
+/* overflow */
+.A14 {
+    background-color: #eee;
+    border-radius: 5px;
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    /* The auto value is similar to scroll, but it adds scrollbars only when necessary: */
+    overflow: auto;
+    /*By default= meaning that it is not clipped and it renders outside the element's box:*/
+    overflow: visible;
+    /* the overflow is clipped, and the rest of the content is hidden: */
+    overflow: hidden;
+    /* 
+    the overflow is clipped and a scrollbar is added to scroll inside the box. 
+    Note that this will add a scrollbar both horizontally and vertically (even if you do not need it):
+     */
+    overflow: scroll;
+    /*  specifies what to do with the left/right edges of the content. */
+    overflow-x: visible;
+    /* specifies what to do with the top/bottom edges of the content. */
+    overflow-y: visible;
+}
+
+/* text */
+.A15 {
+    /* text color*/
+    color: rosybrown;
+
+    /*
+    text shadow
+    H-shadow V-shadow Blur color
+    */
+    text-shadow: 1px 1px 1px red;
+
+    /*
+    text aliment
+    lift right center
+    */
+    text-align: center;
+
+    /*
+    direction
+    rtl->right to lift
+    ltr->lift to right
+    */
+    direction: ltr;
+
+    /*
+    vertical-align
+    top,bottom,middle
+    */
+    vertical-align: middle;
+
+    /*
+    text-decoration
+    (none,overline,underline,line-through)
+    */
+    text-decoration: none;
+
+    /*
+    text-transform
+    (none,uppercase,lowercase,capitalize)
+    */
+    text-transform: none;
+
+    /*letter-spacing*/
+    letter-spacing: 2px;
+
+    /*space before words*/
+    text-indent: 50px;
+
+    /*Space between lines*/
+    line-height: 170%;
+
+    /* Space between words */
+    word-spacing: 2PX;
+
+    /* nowrap word */
+    white-space: nowrap;
+
+    /*
+    Word Breaking=>
+    -keep-all
+    -break-all
+    */
+    word-break: normal;
+
+    /*
+    text overflow=>
+    -ellipsis
+    -clip 
+    */
+    text-overflow: ellipsis;
+
+    /* word wrap */
+    word-wrap: break-word;
+    /*
+    Writing Mode=>
+    -horizontal-tb(default)
+    -vertical-lr/rl
+    */
+    writing-mode: normal;
+}
+
+/* inheritance */
+.A16 {
+    padding: 10px;
+    border: 10px solid red;
+}
+
+
+.A16 p {
+    border: inherit;
+}
+
+/* font */
+.A17 {
+    /* 
+    {default fot size for web page is (16)}
+
+    font family:-
+    {
+    (Serif,Sans-serif,Monospace,Cursive,Fantasy)
+    (https://fonts.google.com/)
+    }
+    Best Web Safe Fonts:-
+    {
+    (Arial (sans-serif)
+    Verdana (sans-serif)
+    Tahoma (sans-serif)
+    Trebuchet MS (sans-serif)
+    Times New Roman (serif)
+    Georgia (serif)
+    Garamond (serif)
+    Courier New (monospace)
+    Brush Script MT (cursive)
+    }    
+    short cut:-
+    {
+        font-style |font-variant| font-weight| font-size/line-height| font-family
+        font: italic small-caps bold 12px/30px Georgia, serif;
+    
+    */
+    margin: auto;
+    border: 10px solid gold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    /*     font-weight=bold={100,200...->900}*/
+    font-variant: small-caps;
+    font-size: 2em;
+}
+
+/* flot-clear */
+.A18 div {
+    /* The CSS float property specifies how an element should float. */
+    float: left;
+    padding: 10px;
+    background-color: red;
+    width: 25%;
+
+}
+
+.A18 p {
+    /* 
+    The CSS clear property specifies what elements
+    can float beside the cleared element and on which side.
+   */
+    clear: both;
+}
+
+/* calculation-opacity */
+.A19 div {
+
+    color: #eee;
+    background-color: black;
+    padding: 10px 0;
+    float: left;
+    width: calc(96% /4);
+    margin-left: 1%;
+    opacity: 0.5;
+}
+
+/* list */
+.A21 ul {
+    list-style-type: circle;
+    list-style-image: url(../mon.jpg);
+    list-style-position: inside;
+    background-color: #0000ff;
+    color: #6b6bc4;
+    /* 
+Remove Default Settings:-
+ list-style-type: none;
+  margin: 0;
+  padding: 0;
+ */
+    /* 
+short cut:-
+list-style-type|  list-style-position|  list-style-image
+list-style: square inside url("sqpurple.gif");
+ */
+}
+
+/* table */
+.A22 table,
+th,
+td {
+    /* Table Borders */
+    border: 1px solid salmon;
+    border-collapse: collapse;
+    /*  Table Size */
+    width: 100%;
+    height: 70%;
+    /* Table Alignment */
+    text-align: center;
+    vertical-align: auto;
+}
+
+/* link */
+.A23 a {
+    color: black;
+    text-decoration: none;
+    background-color: #492424;
+    padding: 14px 24px;
+    margin: 1px;
+    display: inline-block;
+}
+
+.A23 a:visited,
+a:hover,
+a:active {
+    background-color: #eee;
+}
